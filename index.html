@@ -7,6 +7,18 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; background-color: #f9f9f9; }
         header { background: #005A9C; color: #fff; padding: 4rem 1rem; text-align: center; }
+        
+        /* New styling for your profile picture */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #fff;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
         header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; }
         header p { font-size: 1.2rem; font-weight: 300; margin-top: 10px; opacity: 0.9; }
         .container { max-width: 800px; margin: auto; padding: 3rem 2rem; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
@@ -21,6 +33,9 @@
 <body>
 
 <header>
+    <!-- This is where your picture is loaded. Change 'profile.jpg' if your file has a different name! -->
+    <img src="profile.jpg" alt="Jason Stephane" class="profile-pic">
+    
     <h1>Jason Stephane</h1>
     <p>Electrical Engineering & Business Administration | Embedded Systems & Robotics</p>
 </header>
@@ -34,7 +49,6 @@
     <div class="project">
         <h3>CBF Shared Autonomy Controller with PS5 Haptic Integration</h3>
         <p>Engineered a real-time Control Barrier Function (CBF) safety filter in ROS 1 for the RB-KAIROS. Developed a custom audio-haptic feedback pipeline to translate human-robot command disagreement into variable-intensity controller vibrations.</p>
-        <!-- Remember to replace 'yourusername' with your actual GitHub username once you upload your repos! -->
         <a href="https://github.com/yourusername/cbf-haptic-teleop" class="btn">View Repository</a>
     </div>
 
