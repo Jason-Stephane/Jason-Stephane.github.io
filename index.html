@@ -60,9 +60,21 @@
         .social-icons a { display: flex; justify-content: center; align-items: center; width: 45px; height: 45px; background: #d1d5db; color: #111; border-radius: 6px; text-decoration: none; font-size: 1.3rem; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, background 0.2s; }
         .social-icons a:hover { transform: translateY(-3px); background: #9ca3af; }
 
-        /* Hero Image Cutout */
-        .hero-img-container { position: absolute; bottom: 0; right: 10%; height: 90%; z-index: 1; }
-        .hero-img-container img { height: 100%; object-fit: contain; object-position: bottom; display: block; filter: drop-shadow(-10px 10px 15px rgba(0,0,0,0.5)); }
+        /* Hero Image - JPG Circular Styling */
+        .hero-img-container { 
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        .hero-img-container img { 
+            width: 380px; 
+            height: 380px; 
+            object-fit: cover; 
+            border-radius: 50%; /* Makes the JPG a perfect circle */
+            border: 6px solid #222; /* Adds a dark border to blend with the black background */
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+        }
 
         /* --- REST OF PAGE --- */
         .container { max-width: 1000px; margin: auto; padding: 4rem 2rem; }
@@ -98,12 +110,13 @@
 
         /* Responsive Fix for Mobile */
         @media (max-width: 768px) {
-            .hero { background: #e5e7eb; flex-direction: column; padding-top: 8rem; text-align: center; }
+            .hero { background: #e5e7eb; flex-direction: column; padding-top: 8rem; text-align: center; padding-bottom: 4rem; }
             .navbar { background: #000; padding: 1rem 5%; justify-content: center; flex-wrap: wrap; gap: 15px;}
             .logo { color: #fff; display: none; }
             .hero-content { flex-direction: column; margin-top: 0; }
             .hero-text { padding-right: 0; }
-            .hero-img-container { position: relative; right: 0; height: 350px; margin-top: 2rem; }
+            .hero-img-container { margin-top: 3rem; justify-content: center; }
+            .hero-img-container img { width: 250px; height: 250px; border: 4px solid #fff; }
             .social-icons { justify-content: center; }
         }
     </style>
@@ -136,8 +149,8 @@
         </div>
 
         <div class="hero-img-container">
-            <!-- Ensure this image has a transparent background! -->
-            <img src="profile-cutout.png" alt="Jason Stephane">
+            <!-- Uses your original JPG, styled into a clean circle -->
+            <img src="profile.jpg" alt="Jason Stephane">
         </div>
     </div>
 </header>
