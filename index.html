@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jason Stephane Kapnang Jouowa | Engineering Portfolio</title>
+    <!-- FontAwesome for professional icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Modern Color Palette */
         :root {
             --primary: #0064B1;
             --accent: #F58025;
@@ -14,23 +15,59 @@
             --text-main: #334155;
             --text-light: #64748b;
         }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg); }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg); overflow-x: hidden; }
         
-        /* Header & Contact Links */
-        header { background: var(--primary); color: #fff; padding: 4rem 1rem; text-align: center; }
-        .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; margin-bottom: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
-        header p { font-size: 1.1rem; font-weight: 300; margin-top: 10px; opacity: 0.9; }
+        /* --- NEW HERO SECTION --- */
+        .hero {
+            position: relative;
+            background: linear-gradient(105deg, #e5e7eb 45%, #000000 45%);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            overflow: hidden;
+        }
         
-        .contact-links { margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .contact-links a { color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.5); padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; transition: background 0.3s; }
-        .contact-links a:hover { background: rgba(255,255,255,0.2); }
+        /* Navigation Bar */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+        .logo { font-size: 1.8rem; font-weight: 900; color: #111; letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-links a { color: #fff; text-decoration: none; font-size: 0.95rem; font-weight: 600; transition: color 0.3s; }
+        .nav-links a:hover { color: #ccc; }
+        .contact-btn { background: #fff; color: #000 !important; padding: 10px 24px; border-radius: 30px; font-weight: 700 !important; }
+        .contact-btn:hover { background: #e5e7eb; }
+
+        /* Hero Text */
+        .hero-content { display: flex; width: 100%; justify-content: space-between; align-items: center; margin-top: 40px; position: relative; z-index: 2; }
+        .hero-text { flex: 1; padding-right: 2rem; }
+        .greeting { font-size: 1.6rem; font-weight: 500; margin-bottom: 0.5rem; color: #333; }
+        .hero-text h1 { font-size: 4rem; font-weight: 800; margin: 0; line-height: 1.1; color: #111; }
+        .title-text { font-size: 1.2rem; font-weight: 600; color: #777; margin-top: 15px; }
+
+        /* Social Icons */
+        .social-icons { display: flex; gap: 15px; margin-top: 2.5rem; }
+        .social-icons a { display: flex; justify-content: center; align-items: center; width: 45px; height: 45px; background: #d1d5db; color: #111; border-radius: 6px; text-decoration: none; font-size: 1.3rem; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, background 0.2s; }
+        .social-icons a:hover { transform: translateY(-3px); background: #9ca3af; }
+
+        /* Hero Image Cutout */
+        .hero-img-container { position: absolute; bottom: 0; right: 10%; height: 90%; z-index: 1; }
+        .hero-img-container img { height: 100%; object-fit: contain; object-position: bottom; display: block; filter: drop-shadow(-10px 10px 15px rgba(0,0,0,0.5)); }
+
+        /* --- REST OF PAGE --- */
+        .container { max-width: 1000px; margin: auto; padding: 4rem 2rem; }
+        h2 { color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 1rem; margin-bottom: 1.5rem;}
         
-        /* Main Layout */
-        .container { max-width: 1000px; margin: auto; padding: 3rem 2rem; }
-        h2 { color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 2.5rem; margin-bottom: 1.5rem;}
-        
-        /* Lists & Text blocks */
         .resume-block { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 1rem; }
         .resume-block h3 { margin-top: 0; margin-bottom: 5px; color: var(--text-main); }
         .resume-block h4 { margin: 0 0 10px 0; font-weight: 500; color: var(--primary); }
@@ -38,7 +75,6 @@
         .resume-block ul { margin: 0; padding-left: 20px; color: var(--text-light); font-size: 0.95rem; }
         .resume-block li { margin-bottom: 6px; }
 
-        /* Interactive Project Grid */
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
         .project-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
         .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
@@ -49,33 +85,67 @@
         .project-content ul { padding-left: 20px; margin-bottom: 1.5rem; color: var(--text-light); font-size: 0.9rem; flex-grow: 1; }
         .project-content li { margin-bottom: 8px; }
         
-        /* Action Buttons */
         a.btn { display: inline-block; background: var(--primary); color: #fff; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; text-align: center; transition: background 0.3s; align-self: flex-start; }
         a.btn:hover { background: var(--accent); }
         
-        /* Skill Badges (Pills) */
         .skill-category { margin-bottom: 1.5rem; }
         .skill-category h4 { margin: 0 0 10px 0; color: var(--text-main); font-size: 1.1rem; }
         .pill { display: inline-block; background: #e2e8f0; color: var(--primary); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; margin: 0 6px 8px 0; font-weight: 600; }
+        
+        .icon-list { list-style: none !important; padding-left: 0 !important; }
+        .icon-list li { display: flex; align-items: flex-start; margin-bottom: 12px; }
+        .icon-list i { color: var(--primary); font-size: 1.2rem; margin-right: 15px; margin-top: 3px; width: 24px; text-align: center; }
+
+        /* Responsive Fix for Mobile */
+        @media (max-width: 768px) {
+            .hero { background: #e5e7eb; flex-direction: column; padding-top: 8rem; text-align: center; }
+            .navbar { background: #000; padding: 1rem 5%; justify-content: center; flex-wrap: wrap; gap: 15px;}
+            .logo { color: #fff; display: none; }
+            .hero-content { flex-direction: column; margin-top: 0; }
+            .hero-text { padding-right: 0; }
+            .hero-img-container { position: relative; right: 0; height: 350px; margin-top: 2rem; }
+            .social-icons { justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <img src="profile.jpg" alt="Jason Stephane Kapnang Jouowa" class="profile-pic">
-    <h1>Jason Stephane Kapnang Jouowa</h1>
-    <p>Electrical Engineering & Business Administration | Embedded Systems & Robotics</p>
-    
-    <div class="contact-links">
-        <a href="mailto:Jason.jouowa@outlook.com">Jason.jouowa@outlook.com</a>
-        <a href="tel:2406599291">240-659-9291</a>
-        <a href="https://linkedin.com/in/jason-stephane" target="_blank">LinkedIn</a>
-        <a href="https://github.com/Jason-Stephane" target="_blank">GitHub</a>
+<!-- HERO SECTION -->
+<header class="hero">
+    <nav class="navbar">
+        <div class="logo"><i class="fa-solid fa-microchip"></i> JS</div>
+        <div class="nav-links">
+            <a href="#about">About me</a>
+            <a href="#skills">Skills</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="mailto:Jason.jouowa@outlook.com" class="contact-btn">CONTACT ME</a>
+        </div>
+    </nav>
+
+    <div class="hero-content">
+        <div class="hero-text">
+            <p class="greeting">Hi, I am</p>
+            <h1>Jason Stephane<br>Kapnang Jouowa</h1>
+            <p class="title-text">Electrical Engineering & Embedded Systems</p>
+            
+            <div class="social-icons">
+                <a href="mailto:Jason.jouowa@outlook.com"><i class="fa-solid fa-at"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://linkedin.com/in/jason-stephane" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-img-container">
+            <!-- Ensure this image has a transparent background! -->
+            <img src="profile-cutout.png" alt="Jason Stephane">
+        </div>
     </div>
 </header>
 
+<!-- MAIN CONTENT -->
 <div class="container">
-    <h2>Education</h2>
+    
+    <h2 id="about">Education</h2>
     <div class="resume-block">
         <span class="date">Expected May 2027</span>
         <h3>The University of Texas at Arlington</h3>
@@ -108,17 +178,7 @@
         </ul>
     </div>
 
-    <div class="resume-block">
-        <span class="date">July 2025 - Feb 2026</span>
-        <h3>Setup Crew Member</h3>
-        <h4>The University of Texas at Arlington - University Center Operations</h4>
-        <ul>
-            <li>Operated audio, lighting, and display equipment across campus for diverse events.</li>
-            <li>Coordinated with staff and clients to set up, monitor, and maintain event spaces through proactive communication.</li>
-        </ul>
-    </div>
-
-    <h2>Technical Projects</h2>
+    <h2 id="portfolio">Technical Projects</h2>
     <div class="project-grid">
         
         <div class="project-card">
@@ -129,7 +189,6 @@
                 <ul>
                     <li>Engineered a real-time Control Barrier Function (CBF) safety filter in ROS 1 for the RB-KAIROS mobile platform, integrating dual-LiDAR perception for collision avoidance.</li>
                     <li>Developed a custom audio-haptic feedback pipeline translating spatial obstacle data and human-robot command disagreement into variable-intensity vibrations and audio warnings.</li>
-                    <li>Designed an automated data visualization tool using Pandas and Matplotlib for post-trial analysis.</li>
                 </ul>
                 <a href="#" class="btn" target="_blank">View Repository</a>
             </div>
@@ -156,53 +215,14 @@
                 <ul>
                     <li>Engineered a short-range optical transceiver using STM32 Nucleo F446RE microcontrollers to transmit digital data exclusively in monochrome black-and-white via a 650 nm laser using on-off keying.</li>
                     <li>Designed the receiver analog front-end integrating a BPW34 photodiode, transimpedance amplifier, and comparator.</li>
-                    <li>Transitioned prototype to custom-milled copper PCBs in 3D-printed enclosures.</li>
                 </ul>
                 <a href="#" class="btn" target="_blank">View Repository</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <img src="weather-station.jpg" alt="Weather Station" class="project-img">
-            <div class="project-content">
-                <h3>Air Pressure and Quality Weather Station</h3>
-                <h4>Jan 2025 - April 2025</h4>
-                <ul>
-                    <li>Engineered an atmospheric sensing device using an Arduino REV3 to monitor air quality and pressure/altitude.</li>
-                    <li>Designed a power regulation stage using an LM2596 Buck Converter to step down 24V DC to 8V.</li>
-                    <li>Developed a custom PCB and 3D-printed enclosure using Fusion 360, delivering the solution for 51% under budget.</li>
-                </ul>
-                <a href="#" class="btn" target="_blank">View Repository</a>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <img src="rc-car.jpg" alt="RC Car Project" class="project-img">
-            <div class="project-content">
-                <h3>RC Car Project (Racecar/J)</h3>
-                <h4>Jun 2025 - Sep 2025</h4>
-                <ul>
-                    <li>Maintained hardware and software for operational readiness, configuring Hokuyo LiDAR and VESC motor drivers.</li>
-                    <li>Resolved serial communication errors and network connections with the VESC motor controller.</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="project-card">
-            <img src="quadcopter.jpg" alt="Quadcopter Drone" class="project-img">
-            <div class="project-content">
-                <h3>Autonomous Navigation Quadcopter Drone</h3>
-                <h4>Sep 2022 - Jun 2023</h4>
-                <ul>
-                    <li>Decomposed drone electronic architecture into functional blocks, focusing on motor power management and sensor integration.</li>
-                    <li>Developed an embedded program enabling the drone to convert user-inputted addresses into GPS coordinates for autonomous navigation.</li>
-                </ul>
             </div>
         </div>
         
     </div>
 
-    <h2>Technical Skills</h2>
+    <h2 id="skills">Technical Skills</h2>
     
     <div class="skill-category">
         <h4>Programming & Software Tools</h4>
@@ -230,22 +250,14 @@
         <span class="pill">Schematic Reading</span>
         <span class="pill">Datasheet Analysis</span>
         <span class="pill">Interrupt Handling</span>
-        <span class="pill">Quartus Prime / NI Multisim</span>
-    </div>
-
-    <div class="skill-category">
-        <h4>Audio Engineering</h4>
-        <span class="pill">Behringer X32</span>
-        <span class="pill">Digital Mixing</span>
-        <span class="pill">Signal Routing</span>
     </div>
 
     <h2>Certifications & Activities</h2>
     <div class="resume-block">
-        <ul>
-            <li><strong>Certifications:</strong> Foundation of Embedded Systems with ARM Cortex and STM32, C Programming Bootcamp, Linux Training Course (Udemy, 2025).</li>
-            <li><strong>Autonobots Club - UTA:</strong> Embedded Engineer (Jan 2025 - Present).</li>
-            <li><strong>Salvation City Ministries:</strong> Head of Media Department (Ongoing) - Manage audio systems, visual equipment, and livestreaming platforms.</li>
+        <ul class="icon-list">
+            <li><i class="fa-solid fa-certificate"></i> <div><strong>Certifications:</strong> Foundation of Embedded Systems with ARM Cortex and STM32, C Programming Bootcamp, Linux Training Course (Udemy, 2025).</div></li>
+            <li><i class="fa-solid fa-robot"></i> <div><strong>Autonobots Club - UTA:</strong> Embedded Engineer (Jan 2025 - Present).</div></li>
+            <li><i class="fa-solid fa-microphone-lines"></i> <div><strong>Salvation City Ministries:</strong> Head of Media Department (Ongoing) - Manage audio systems, visual equipment, and livestreaming platforms.</div></li>
         </ul>
     </div>
 </div>
