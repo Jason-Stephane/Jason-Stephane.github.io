@@ -3,71 +3,250 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jason Stephane | Engineering Portfolio</title>
+    <title>Jason Stephane Kapnang Jouowa | Engineering Portfolio</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: #333; background-color: #f9f9f9; }
-        header { background: #005A9C; color: #fff; padding: 4rem 1rem; text-align: center; }
-        
-        /* New styling for your profile picture */
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #fff;
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        /* Modern Color Palette */
+        :root {
+            --primary: #0064B1;
+            --accent: #F58025;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-light: #64748b;
         }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg); }
+        
+        /* Header & Contact Links */
+        header { background: var(--primary); color: #fff; padding: 4rem 1rem; text-align: center; }
+        .profile-pic { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid #fff; margin-bottom: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        header p { font-size: 1.1rem; font-weight: 300; margin-top: 10px; opacity: 0.9; }
+        
+        .contact-links { margin-top: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .contact-links a { color: #fff; text-decoration: none; border: 1px solid rgba(255,255,255,0.5); padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; transition: background 0.3s; }
+        .contact-links a:hover { background: rgba(255,255,255,0.2); }
+        
+        /* Main Layout */
+        .container { max-width: 1000px; margin: auto; padding: 3rem 2rem; }
+        h2 { color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 2.5rem; margin-bottom: 1.5rem;}
+        
+        /* Lists & Text blocks */
+        .resume-block { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 1rem; }
+        .resume-block h3 { margin-top: 0; margin-bottom: 5px; color: var(--text-main); }
+        .resume-block h4 { margin: 0 0 10px 0; font-weight: 500; color: var(--primary); }
+        .resume-block span.date { float: right; color: var(--text-light); font-size: 0.9rem; font-weight: bold; }
+        .resume-block ul { margin: 0; padding-left: 20px; color: var(--text-light); font-size: 0.95rem; }
+        .resume-block li { margin-bottom: 6px; }
 
-        header h1 { margin: 0; font-size: 2.8rem; letter-spacing: 1px; }
-        header p { font-size: 1.2rem; font-weight: 300; margin-top: 10px; opacity: 0.9; }
-        .container { max-width: 800px; margin: auto; padding: 3rem 2rem; background: #fff; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        h2 { color: #005A9C; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-top: 2rem; }
-        .project { background: #fff; margin-bottom: 2rem; padding: 1.5rem; border-left: 4px solid #005A9C; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .project h3 { margin-top: 0; color: #222; }
-        a.btn { display: inline-block; background: #005A9C; color: #fff; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; margin-top: 10px; }
-        a.btn:hover { background: #004070; }
-        .skills p { margin: 10px 0; }
+        /* Interactive Project Grid */
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .project-card { background: var(--card-bg); border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease; display: flex; flex-direction: column; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 12px 20px rgba(0,0,0,0.1); }
+        .project-img { width: 100%; height: 180px; background-color: #cbd5e1; object-fit: cover; display: block; }
+        .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-content h3 { margin-top: 0; color: var(--primary); font-size: 1.15rem; line-height: 1.3; margin-bottom: 5px; }
+        .project-content h4 { margin: 0 0 10px 0; font-size: 0.9rem; color: var(--text-light); font-weight: normal; }
+        .project-content ul { padding-left: 20px; margin-bottom: 1.5rem; color: var(--text-light); font-size: 0.9rem; flex-grow: 1; }
+        .project-content li { margin-bottom: 8px; }
+        
+        /* Action Buttons */
+        a.btn { display: inline-block; background: var(--primary); color: #fff; padding: 8px 15px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem; text-align: center; transition: background 0.3s; align-self: flex-start; }
+        a.btn:hover { background: var(--accent); }
+        
+        /* Skill Badges (Pills) */
+        .skill-category { margin-bottom: 1.5rem; }
+        .skill-category h4 { margin: 0 0 10px 0; color: var(--text-main); font-size: 1.1rem; }
+        .pill { display: inline-block; background: #e2e8f0; color: var(--primary); padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; margin: 0 6px 8px 0; font-weight: 600; }
     </style>
 </head>
 <body>
 
 <header>
-    <!-- This is where your picture is loaded. Change 'profile.jpg' if your file has a different name! -->
-    <img src="profile.jpg" alt="Jason Stephane" class="profile-pic">
-    
-    <h1>Jason Stephane Kapnang jouowa</h1>
+    <img src="profile.jpg" alt="Jason Stephane Kapnang Jouowa" class="profile-pic">
+    <h1>Jason Stephane Kapnang Jouowa</h1>
     <p>Electrical Engineering & Business Administration | Embedded Systems & Robotics</p>
+    
+    <div class="contact-links">
+        <a href="mailto:Jason.jouowa@outlook.com">Jason.jouowa@outlook.com[cite: 7]</a>
+        <a href="tel:2406599291">240-659-9291[cite: 7]</a>
+        <a href="https://linkedin.com/in/jason-stephane" target="_blank">LinkedIn[cite: 7]</a>
+        <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+    </div>
 </header>
 
 <div class="container">
-    <h2>About Me</h2>
-    <p>I am an Undergraduate Research Assistant at the University of Texas at Arlington Research Institute (UTARI). I specialize in bridging low-level embedded hardware with high-level robotic control systems, integrating ROS architectures, and creating market-ready product assets.</p>
+    <h2>Education</h2>
+    <div class="resume-block">
+        <span class="date">Expected May 2027[cite: 7]</span>
+        <h3>The University of Texas at Arlington[cite: 7]</h3>
+        <h4>Bachelor of Science in Electrical Engineering | GPA: 3.762/4.00[cite: 7]</h4>
+        <ul>
+            <li><strong>Relevant Coursework:</strong> Embedded Systems, Controls Systems, Power Systems, Digital Logic, Circuit Analysis, Fourier Series, Semiconductors[cite: 7]</li>
+        </ul>
+    </div>
+
+    <h2>Professional Experience</h2>
+    
+    <div class="resume-block">
+        <span class="date">Feb 2026 - Present[cite: 7]</span>
+        <h3>Research Assistant[cite: 7]</h3>
+        <h4>The University of Texas at Arlington Research Institute (UTARI)[cite: 7]</h4>
+        <ul>
+            <li>Develop and deploy real-time perception, navigation, and control software across multiple mobile robotic platforms, including NVIDIA Jetson Orin Nano and RB-KAIROS, using Python, C/C++, ROS 1, and ROS 2[cite: 7].</li>
+            <li>Architect camera and LiDAR sensor fusion pipelines for continuous robot odometry, localization, and environmental mapping to support obstacle detection and collision avoidance systems[cite: 7].</li>
+            <li>Engineer asynchronous data logging systems for human-in-the-loop teleoperation studies, using Pandas and Matplotlib to validate kinematic performance and system safety[cite: 7].</li>
+        </ul>
+    </div>
+
+    <div class="resume-block">
+        <span class="date">Jan 2025 - May 2026[cite: 7]</span>
+        <h3>Peer-Led Team Learning Leader[cite: 7]</h3>
+        <h4>The University of Texas at Arlington - Academic Success Center[cite: 7]</h4>
+        <ul>
+            <li>Led teams of 8 peers through complex topics in Differential Equations and Linear Algebra[cite: 7].</li>
+            <li>Designed and tailored teaching methods to diverse learning styles to enhance student comprehension and retention[cite: 7].</li>
+        </ul>
+    </div>
+
+    <div class="resume-block">
+        <span class="date">July 2025 - Feb 2026[cite: 7]</span>
+        <h3>Setup Crew Member[cite: 7]</h3>
+        <h4>The University of Texas at Arlington - University Center Operations[cite: 7]</h4>
+        <ul>
+            <li>Operated audio, lighting, and display equipment across campus for diverse events[cite: 7].</li>
+            <li>Coordinated with staff and clients to set up, monitor, and maintain event spaces through proactive communication[cite: 7].</li>
+        </ul>
+    </div>
 
     <h2>Technical Projects</h2>
+    <div class="project-grid">
+        
+        <div class="project-card">
+            <img src="cbf-robot.jpg" alt="RB-KAIROS Robot" class="project-img">
+            <div class="project-content">
+                <h3>CBF Shared Autonomy Controller with PS5 Haptic Integration[cite: 7]</h3>
+                <h4>June 2026 - Present[cite: 7]</h4>
+                <ul>
+                    <li>Engineered a real-time Control Barrier Function (CBF) safety filter in ROS 1 for the RB-KAIROS mobile platform, integrating dual-LiDAR perception for collision avoidance[cite: 7].</li>
+                    <li>Developed a custom audio-haptic feedback pipeline translating spatial obstacle data and human-robot command disagreement into variable-intensity vibrations and audio warnings[cite: 7].</li>
+                    <li>Designed an automated data visualization tool using Pandas and Matplotlib for post-trial analysis[cite: 7].</li>
+                </ul>
+                <a href="#" class="btn" target="_blank">View Repository</a>
+            </div>
+        </div>
 
-    <div class="project">
-        <h3>CBF Shared Autonomy Controller with PS5 Haptic Integration</h3>
-        <p>Engineered a real-time Control Barrier Function (CBF) safety filter in ROS 1 for the RB-KAIROS. Developed a custom audio-haptic feedback pipeline to translate human-robot command disagreement into variable-intensity controller vibrations.</p>
-        <a href="https://github.com/yourusername/cbf-haptic-teleop" class="btn">View Repository</a>
+        <div class="project-card">
+            <img src="haptics-ros2.jpg" alt="ROS 2 Haptics" class="project-img">
+            <div class="project-content">
+                <h3>Refining Haptics Feedback and Cross-Platform Portability[cite: 7]</h3>
+                <h4>Jan 2026 - May 2026[cite: 7]</h4>
+                <ul>
+                    <li>Ported a Shared Autonomy Controller from ROS 1 to ROS 2 Humble, implementing an Artificial Potential Field node for obstacle-avoidance-assisted teleoperation on an NVIDIA Jetson Orin Nano[cite: 7].</li>
+                    <li>Developed a DualSense haptic feedback API delivering granular tactile alerts based on obstacle proximity for visually impaired operators[cite: 7].</li>
+                </ul>
+                <a href="#" class="btn" target="_blank">View Repository</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="fso-pcb.jpg" alt="STM32 Transceiver Hardware" class="project-img">
+            <div class="project-content">
+                <h3>Optical Transceiver for Free-Space Data Transmission[cite: 7]</h3>
+                <h4>Jan 2026 - May 2026[cite: 7]</h4>
+                <ul>
+                    <li>Engineered a short-range optical transceiver using STM32 Nucleo F446RE microcontrollers to transmit digital data exclusively in monochrome black-and-white via a 650 nm laser using on-off keying[cite: 7].</li>
+                    <li>Designed the receiver analog front-end integrating a BPW34 photodiode, transimpedance amplifier, and comparator[cite: 7].</li>
+                    <li>Transitioned prototype to custom-milled copper PCBs in 3D-printed enclosures[cite: 7].</li>
+                </ul>
+                <a href="#" class="btn" target="_blank">View Repository</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="weather-station.jpg" alt="Weather Station" class="project-img">
+            <div class="project-content">
+                <h3>Air Pressure and Quality Weather Station[cite: 7]</h3>
+                <h4>Jan 2025 - April 2025[cite: 7]</h4>
+                <ul>
+                    <li>Engineered an atmospheric sensing device using an Arduino REV3 to monitor air quality and pressure/altitude[cite: 7].</li>
+                    <li>Designed a power regulation stage using an LM2596 Buck Converter to step down 24V DC to 8V[cite: 7].</li>
+                    <li>Developed a custom PCB and 3D-printed enclosure using Fusion 360, delivering the solution for 51% under budget[cite: 7].</li>
+                </ul>
+                <a href="#" class="btn" target="_blank">View Repository</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="rc-car.jpg" alt="RC Car Project" class="project-img">
+            <div class="project-content">
+                <h3>RC Car Project (Racecar/J)[cite: 7]</h3>
+                <h4>Jun 2025 - Sep 2025[cite: 7]</h4>
+                <ul>
+                    <li>Maintained hardware and software for operational readiness, configuring Hokuyo LiDAR and VESC motor drivers[cite: 7].</li>
+                    <li>Resolved serial communication errors and network connections with the VESC motor controller[cite: 7].</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="quadcopter.jpg" alt="Quadcopter Drone" class="project-img">
+            <div class="project-content">
+                <h3>Autonomous Navigation Quadcopter Drone[cite: 7]</h3>
+                <h4>Sep 2022 - Jun 2023[cite: 7]</h4>
+                <ul>
+                    <li>Decomposed drone electronic architecture into functional blocks, focusing on motor power management and sensor integration[cite: 7].</li>
+                    <li>Developed an embedded program enabling the drone to convert user-inputted addresses into GPS coordinates for autonomous navigation[cite: 7].</li>
+                </ul>
+            </div>
+        </div>
+        
     </div>
 
-    <div class="project">
-        <h3>Free-Space Optical (FSO) Data Transceiver</h3>
-        <p>Manufactured a custom analog receiver circuit and programmed bare-metal STM32 C firmware to transmit digital data via laser. Engineered a MATLAB signal processing pipeline dedicated exclusively to encoding and reconstructing monochrome black-and-white image transmission.</p>
-        <a href="https://github.com/yourusername/stm32-fso-transceiver" class="btn">View Repository</a>
+    <h2>Technical Skills</h2>
+    
+    <div class="skill-category">
+        <h4>Programming & Software Tools[cite: 7]</h4>
+        <span class="pill">C / Embedded C[cite: 7]</span>
+        <span class="pill">Python[cite: 7]</span>
+        <span class="pill">Bash[cite: 7]</span>
+        <span class="pill">STM32CubeIDE[cite: 7]</span>
+        <span class="pill">Arduino IDE[cite: 7]</span>
+        <span class="pill">Git[cite: 7]</span>
+    </div>
+    
+    <div class="skill-category">
+        <h4>Robotics, Systems & Hardware Protocols[cite: 7]</h4>
+        <span class="pill">ROS 1 Noetic[cite: 7]</span>
+        <span class="pill">ROS 2 Humble & Foxy[cite: 7]</span>
+        <span class="pill">Linux (Ubuntu OS)[cite: 7]</span>
+        <span class="pill">UART / USART[cite: 7]</span>
+        <span class="pill">CAN / SPI / I2C[cite: 7]</span>
+    </div>
+    
+    <div class="skill-category">
+        <h4>Hardware Design & Technical[cite: 7]</h4>
+        <span class="pill">PCB Design[cite: 7]</span>
+        <span class="pill">Autodesk Fusion 360[cite: 7]</span>
+        <span class="pill">Schematic Reading[cite: 7]</span>
+        <span class="pill">Datasheet Analysis[cite: 7]</span>
+        <span class="pill">Interrupt Handling[cite: 7]</span>
+        <span class="pill">Quartus Prime / NI Multisim[cite: 7]</span>
     </div>
 
-    <div class="project">
-        <h3>Spice Delight: E-commerce Product Marketing</h3>
-        <p>Leveraged business administration and graphic design workflows to produce professional product flyers and structured A4 catalog pages for custom spice collections.</p>
+    <div class="skill-category">
+        <h4>Audio Engineering[cite: 7]</h4>
+        <span class="pill">Behringer X32[cite: 7]</span>
+        <span class="pill">Digital Mixing[cite: 7]</span>
+        <span class="pill">Signal Routing[cite: 7]</span>
     </div>
 
-    <div class="skills">
-        <h2>Technical Skills</h2>
-        <p><strong>Languages:</strong> C/C++, Python, MATLAB Simulink, HTML/CSS</p>
-        <p><strong>Systems:</strong> ROS 1, ROS 2, Linux (Ubuntu), ARM Cortex-M</p>
-        <p><strong>Design:</strong> SolidWorks, Autodesk Fusion 360, PCB Layout</p>
+    <h2>Certifications & Activities</h2>
+    <div class="resume-block">
+        <ul>
+            <li><strong>Certifications:</strong> Foundation of Embedded Systems with ARM Cortex and STM32, C Programming Bootcamp, Linux Training Course (Udemy, 2025)[cite: 7].</li>
+            <li><strong>Autonobots Club - UTA:</strong> Embedded Engineer (Jan 2025 - Present)[cite: 7].</li>
+            <li><strong>Salvation City Ministries:</strong> Head of Media Department (Ongoing) - Manage audio systems, visual equipment, and livestreaming platforms[cite: 7].</li>
+        </ul>
     </div>
 </div>
 
