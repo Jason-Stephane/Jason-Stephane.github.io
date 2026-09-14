@@ -54,6 +54,9 @@
         .greeting { font-size: 1.6rem; font-weight: 500; margin-bottom: 0.5rem; color: #333; }
         .hero-text h1 { font-size: 4rem; font-weight: 800; margin: 0; line-height: 1.1; color: #111; }
         .title-text { font-size: 1.2rem; font-weight: 600; color: #777; margin-top: 15px; }
+        
+        /* NEW: Hero Summary Styling */
+        .hero-summary { font-size: 1.05rem; color: #444; margin-top: 20px; line-height: 1.6; font-weight: 400; max-width: 95%; }
 
         /* Social Icons */
         .social-icons { display: flex; gap: 15px; margin-top: 2.5rem; }
@@ -115,6 +118,7 @@
             .logo { color: #fff; display: none; }
             .hero-content { flex-direction: column; margin-top: 0; }
             .hero-text { padding-right: 0; }
+            .hero-summary { margin: 20px auto 0 auto; text-align: center; }
             .hero-img-container { margin-top: 3rem; justify-content: center; }
             .hero-img-container img { width: 250px; height: 250px; border: 4px solid #fff; }
             .social-icons { justify-content: center; }
@@ -140,6 +144,11 @@
             <p class="greeting">Hi, I am</p>
             <h1>Jason Stephane<br>Kapnang Jouowa</h1>
             <p class="title-text">Electrical Engineering & Embedded Systems</p>
+            
+            <!-- NEW PROFESSIONAL SUMMARY -->
+            <p class="hero-summary">
+                I am an Electrical Engineering student and Undergraduate Research Assistant specializing in robotics perception, bare-metal firmware, and control systems. I build robust hardware-in-the-loop architectures using ROS, NVIDIA Jetson, and STM32 microcontrollers. I am actively seeking engineering internships to apply my cross-disciplinary skills to cutting-edge autonomous and embedded solutions.
+            </p>
             
             <div class="social-icons">
                 <a href="mailto:Jason.jouowa@outlook.com"><i class="fa-solid fa-at"></i></a>
@@ -209,7 +218,7 @@
 
         <div class="project-card">
             
-            <video src="haptics-ros2.mp4" class="project-img" autoplay loop muted playsinline></video>
+            <img src="haptics-ros2.jpg" alt="ROS 2 Haptics" class="project-img">
             <div class="project-content">
                 <h3>Refining Haptics Feedback and Cross-Platform Portability</h3>
                 <h4>Jan 2026 - May 2026</h4>
