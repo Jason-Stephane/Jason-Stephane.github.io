@@ -20,12 +20,11 @@
         /* --- UNIFIED HERO SECTION --- */
         .hero {
             position: relative;
-            /* Changed black to a deep, professional navy blue */
             background: linear-gradient(105deg, #e5e7eb 55%, #001F3F 55%);
             min-height: 85vh;
             display: flex;
             align-items: center;
-            padding-bottom: 5rem; /* Added space at the bottom for the card overlap */
+            padding-bottom: 3rem; 
             overflow: hidden;
         }
         
@@ -65,7 +64,6 @@
         }
         .hero-text { flex: 1; padding-right: 2rem; }
         .greeting { font-size: 1.6rem; font-weight: 500; margin-bottom: 0.5rem; color: #333; }
-        /* Changed name color to Primary Blue */
         .hero-text h1 { font-size: 4rem; font-weight: 800; margin: 0; line-height: 1.1; color: var(--primary); }
         .title-text { font-size: 1.2rem; font-weight: 600; color: #777; margin-top: 15px; }
         
@@ -96,13 +94,13 @@
         .container { max-width: 1000px; margin: auto; padding: 0 2rem 4rem 2rem; }
         h2 { color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 1rem; margin-bottom: 1.5rem;}
         
-        /* The Overlap Bridge Card */
+        /* The Overlap Bridge Card - Adjusted to push the card further down */
         .first-card {
             background: var(--card-bg);
             padding: 2.5rem;
             border-radius: 12px;
             box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            margin-top: -6rem; /* This pulls the card UP to overlap the background! */
+            margin-top: -2rem; /* Changed from -6rem to -2rem to create more space */
             position: relative;
             z-index: 10;
             margin-bottom: 2rem;
@@ -172,7 +170,7 @@
             <h1>Jason Stephane<br>Kapnang Jouowa</h1>
             <p class="title-text">Electrical Engineering & Embedded Systems</p>
             
-            <!-- NEW PROFESSIONAL SUMMARY -->
+            <!-- PROFESSIONAL SUMMARY -->
             <p class="hero-summary">
                 I am an Electrical Engineering student and Undergraduate Research Assistant specializing in robotics perception, bare-metal firmware, and control systems. I build robust hardware-in-the-loop architectures using ROS, NVIDIA Jetson, and STM32 microcontrollers. I am actively seeking engineering internships to apply my cross-disciplinary skills to cutting-edge autonomous and embedded solutions.
             </p>
