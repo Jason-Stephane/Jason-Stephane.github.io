@@ -15,6 +15,8 @@
             --text-main: #334155;
             --text-light: #64748b;
         }
+        /* ADDED SMOOTH SCROLLING */
+        html { scroll-behavior: smooth; }
         body { font-family: 'Segoe UI', system-ui, sans-serif; line-height: 1.6; margin: 0; padding: 0; color: var(--text-main); background-color: var(--bg); overflow-x: hidden; }
         
         /* --- UNIFIED HERO SECTION --- */
@@ -28,7 +30,6 @@
             overflow: hidden;
         }
         
-        /* Navigation Bar - Aligned to max-width */
         .navbar {
             position: absolute;
             top: 0;
@@ -49,7 +50,6 @@
         .contact-btn { background: #fff; color: #000 !important; padding: 10px 24px; border-radius: 30px; font-weight: 700 !important; }
         .contact-btn:hover { background: #e5e7eb; }
 
-        /* Hero Text - Aligned to max-width */
         .hero-content { 
             max-width: 1000px; 
             margin: 40px auto 0 auto; 
@@ -66,45 +66,24 @@
         .greeting { font-size: 1.6rem; font-weight: 500; margin-bottom: 0.5rem; color: #333; }
         .hero-text h1 { font-size: 4rem; font-weight: 800; margin: 0; line-height: 1.1; color: var(--primary); }
         .title-text { font-size: 1.2rem; font-weight: 600; color: #777; margin-top: 15px; }
-        
         .hero-summary { font-size: 1.05rem; color: #444; margin-top: 20px; line-height: 1.6; font-weight: 400; max-width: 95%; }
 
-        /* Social Icons */
-        .social-icons { display: flex; gap: 15px; margin-top: 2.5rem; }
+        /* ADDED RESUME BUTTON & ALIGNED SOCIALS */
+        .action-row { display: flex; align-items: center; gap: 20px; margin-top: 2rem; flex-wrap: wrap; }
+        .resume-btn { background: var(--accent); color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .resume-btn:hover { background: #d9701a; transform: translateY(-2px); }
+        .social-icons { display: flex; gap: 15px; }
         .social-icons a { display: flex; justify-content: center; align-items: center; width: 45px; height: 45px; background: #d1d5db; color: #111; border-radius: 6px; text-decoration: none; font-size: 1.3rem; box-shadow: 2px 2px 8px rgba(0,0,0,0.1); transition: transform 0.2s, background 0.2s; }
         .social-icons a:hover { transform: translateY(-3px); background: #9ca3af; }
 
-        /* Hero Image */
-        .hero-img-container { 
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        .hero-img-container img { 
-            width: 380px; 
-            height: 380px; 
-            object-fit: cover; 
-            border-radius: 50%;
-            border: 6px solid #222;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
-        }
+        .hero-img-container { flex: 1; display: flex; justify-content: flex-end; align-items: center; }
+        .hero-img-container img { width: 380px; height: 380px; object-fit: cover; border-radius: 50%; border: 6px solid #222; box-shadow: 0 15px 35px rgba(0,0,0,0.5); }
 
         /* --- REST OF PAGE --- */
-        .container { max-width: 1000px; margin: auto; padding: 0 2rem 4rem 2rem; }
+        .container { max-width: 1000px; margin: auto; padding: 0 2rem 2rem 2rem; }
         h2 { color: var(--primary); border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 1rem; margin-bottom: 1.5rem;}
         
-        /* The Overlap Bridge Card - Adjusted to push the card further down */
-        .first-card {
-            background: var(--card-bg);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-            margin-top: -1rem; /* Changed from -6rem to -2rem to create more space */
-            position: relative;
-            z-index: 10;
-            margin-bottom: 2rem;
-        }
+        .first-card { background: var(--card-bg); padding: 2.5rem; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.08); margin-top: -2rem; position: relative; z-index: 10; margin-bottom: 2rem; }
         .first-card h2 { margin-top: 0; border-bottom: none; padding-bottom: 0; }
         
         .resume-block { background: var(--card-bg); padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 1rem; }
@@ -121,6 +100,11 @@
         .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .project-content h3 { margin-top: 0; color: var(--primary); font-size: 1.15rem; line-height: 1.3; margin-bottom: 5px; }
         .project-content h4 { margin: 0 0 10px 0; font-size: 0.9rem; color: var(--text-light); font-weight: normal; }
+        
+        /* ADDED TECH TAGS */
+        .project-tags { margin-bottom: 12px; }
+        .project-tag { display: inline-block; background: #e2e8f0; color: var(--primary); padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-right: 6px; margin-bottom: 6px; }
+
         .project-content ul { padding-left: 20px; margin-bottom: 1.5rem; color: var(--text-light); font-size: 0.9rem; flex-grow: 1; }
         .project-content li { margin-bottom: 8px; }
         
@@ -135,6 +119,11 @@
         .icon-list li { display: flex; align-items: flex-start; margin-bottom: 12px; }
         .icon-list i { color: var(--primary); font-size: 1.2rem; margin-right: 15px; margin-top: 3px; width: 24px; text-align: center; }
 
+        /* ADDED FOOTER */
+        footer { background: #001F3F; color: #fff; text-align: center; padding: 2rem 1rem; margin-top: 4rem; font-size: 0.9rem; }
+        footer a { color: var(--accent); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; transition: color 0.3s; }
+        footer a:hover { color: #fff; }
+
         /* Responsive Fix for Mobile */
         @media (max-width: 768px) {
             .hero { background: #e5e7eb; flex-direction: column; padding-top: 8rem; text-align: center; padding-bottom: 6rem; }
@@ -143,9 +132,9 @@
             .hero-content { flex-direction: column; margin-top: 0; padding: 0 1rem; }
             .hero-text { padding-right: 0; }
             .hero-summary { margin: 20px auto 0 auto; text-align: center; }
+            .action-row { justify-content: center; }
             .hero-img-container { margin-top: 3rem; justify-content: center; }
             .hero-img-container img { width: 250px; height: 250px; border: 4px solid #fff; }
-            .social-icons { justify-content: center; }
             .first-card { margin-top: -3rem; }
         }
     </style>
@@ -170,15 +159,19 @@
             <h1>Jason Stephane<br>Kapnang Jouowa</h1>
             <p class="title-text">Electrical Engineering & Embedded Systems</p>
             
-            <!-- PROFESSIONAL SUMMARY -->
             <p class="hero-summary">
                 I am an Electrical Engineering student and Undergraduate Research Assistant specializing in robotics perception, bare-metal firmware, and control systems. I build robust hardware-in-the-loop architectures using ROS, NVIDIA Jetson, and STM32 microcontrollers. I am actively seeking engineering internships to apply my cross-disciplinary skills to cutting-edge autonomous and embedded solutions.
             </p>
             
-            <div class="social-icons">
-                <a href="mailto:Jason.jouowa@outlook.com"><i class="fa-solid fa-at"></i></a>
-                <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a href="https://linkedin.com/in/jason-stephane" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            <div class="action-row">
+                <a href="Resume_Jason_Stephane_Kapnang_Jouowa_intern.pdf" class="resume-btn" target="_blank">
+                    <i class="fa-solid fa-file-pdf"></i> Download Resume
+                </a>
+                <div class="social-icons">
+                    <a href="mailto:Jason.jouowa@outlook.com"><i class="fa-solid fa-at"></i></a>
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://linkedin.com/in/jason-stephane" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
             </div>
         </div>
 
@@ -191,9 +184,8 @@
 <!-- MAIN CONTENT -->
 <div class="container">
     
-    <!-- THE NEW OVERLAP BRIDGE CARD -->
-    <div class="first-card">
-        <h2 id="about">Education</h2>
+    <div class="first-card" id="about">
+        <h2>Education</h2>
         <span class="date">Expected May 2027</span>
         <h3>The University of Texas at Arlington</h3>
         <h4>Bachelor of Science in Electrical Engineering | GPA: 3.762/4.00</h4>
@@ -233,6 +225,11 @@
             <div class="project-content">
                 <h3>CBF Shared Autonomy Controller with PS5 Haptic Integration</h3>
                 <h4>June 2026 - Present</h4>
+                <div class="project-tags">
+                    <span class="project-tag">ROS 1</span>
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">LiDAR</span>
+                </div>
                 <ul>
                     <li>Engineered a real-time Control Barrier Function (CBF) safety filter in ROS 1 for the RB-KAIROS mobile platform, integrating dual-LiDAR perception for collision avoidance.</li>
                     <li>Developed a custom audio-haptic feedback pipeline translating spatial obstacle data and human-robot command disagreement into variable-intensity vibrations and audio warnings.</li>
@@ -243,11 +240,15 @@
         </div>
 
         <div class="project-card">
-            
             <img src="haptics-ros2.jpg" alt="ROS 2 Haptics" class="project-img">
             <div class="project-content">
                 <h3>Refining Haptics Feedback and Cross-Platform Portability</h3>
                 <h4>Jan 2026 - May 2026</h4>
+                <div class="project-tags">
+                    <span class="project-tag">ROS 2</span>
+                    <span class="project-tag">Jetson Orin</span>
+                    <span class="project-tag">C++</span>
+                </div>
                 <ul>
                     <li>Ported a Shared Autonomy Controller from ROS 1 to ROS 2 Humble, implementing an Artificial Potential Field node for obstacle-avoidance-assisted teleoperation on an NVIDIA Jetson Orin Nano.</li>
                     <li>Tuned repulsive potential field parameters and validated ROS 2 hardware integration on the Hiwonder ROSOrin.</li>
@@ -262,6 +263,11 @@
             <div class="project-content">
                 <h3>Optical Transceiver for Free-Space Data Transmission</h3>
                 <h4>Jan 2026 - May 2026</h4>
+                <div class="project-tags">
+                    <span class="project-tag">STM32</span>
+                    <span class="project-tag">Bare-Metal C</span>
+                    <span class="project-tag">PCB Design</span>
+                </div>
                 <ul>
                     <li>Engineered a short-range optical transceiver using STM32 Nucleo F446RE microcontrollers to transmit digital data via a 650 nm laser using on-off keying.</li>
                     <li>Designed the receiver analog front-end integrating a BPW34 photodiode, transimpedance amplifier, and comparator.</li>
@@ -276,6 +282,11 @@
             <div class="project-content">
                 <h3>Air Pressure and Quality Weather Station</h3>
                 <h4>Jan 2025 - April 2025</h4>
+                <div class="project-tags">
+                    <span class="project-tag">Arduino</span>
+                    <span class="project-tag">Fusion 360</span>
+                    <span class="project-tag">Hardware</span>
+                </div>
                 <ul>
                     <li>Engineered an atmospheric sensing device using an Arduino REV3 to monitor air quality and pressure/altitude.</li>
                     <li>Designed a power regulation stage using an LM2596 Buck Converter to step down 24V DC to 8V.</li>
@@ -289,6 +300,11 @@
             <div class="project-content">
                 <h3>RC Car Project (Racecar/J)</h3>
                 <h4>Jun 2025 - Sep 2025</h4>
+                <div class="project-tags">
+                    <span class="project-tag">VESC</span>
+                    <span class="project-tag">Hardware Setup</span>
+                    <span class="project-tag">Linux</span>
+                </div>
                 <ul>
                     <li>Maintained and updated RC car hardware and software for operational readiness, configuring Hokuyo LiDAR and VESC motor drivers.</li>
                     <li>Troubleshot and resolved physical and software issues, including network connections and serial communication errors.</li>
@@ -301,6 +317,11 @@
             <div class="project-content">
                 <h3>Autonomous Navigation Quadcopter Drone</h3>
                 <h4>Sep 2022 - Jun 2023</h4>
+                <div class="project-tags">
+                    <span class="project-tag">Control Systems</span>
+                    <span class="project-tag">GPS</span>
+                    <span class="project-tag">Embedded</span>
+                </div>
                 <ul>
                     <li>Decomposed the drone electronic architecture into functional blocks, focusing on motor power management and sensor integration.</li>
                     <li>Developed an embedded program enabling the drone to convert user-inputted addresses into GPS coordinates for autonomous navigation and return-to-base maneuvers.</li>
@@ -349,6 +370,12 @@
         </ul>
     </div>
 </div>
+
+<!-- PROFESSIONAL FOOTER -->
+<footer>
+    <p>&copy; 2026 Jason Stephane Kapnang Jouowa. All Rights Reserved.</p>
+    <a href="#"><i class="fa-solid fa-arrow-up"></i> Back to Top</a>
+</footer>
 
 </body>
 </html>
